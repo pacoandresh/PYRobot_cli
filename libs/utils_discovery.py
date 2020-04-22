@@ -85,7 +85,7 @@ class Discovery(object):
     
         
     
-module=importlib.import_module("PYRobot.libs.utils_discovery")
+module=importlib.import_module("PYRobot_cli.libs.utils_discovery")
 getters={name:obj for name,obj in inspect.getmembers(module,inspect.isfunction) if "_Get_" in name}
 senders={name:obj for name,obj in inspect.getmembers(module,inspect.isfunction) if "_Send_" in name}
 #methods={name:obj for name,obj in inspect.getmembers(Discovery,inspect.ismethod)}

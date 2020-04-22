@@ -13,7 +13,7 @@ import socket
 import setproctitle
 import psutil
 from gevent.subprocess import Popen
-from PYRobot.libs.botlogging.coloramadefs import P_Log
+from PYRobot.botlogging.coloramadefs import P_Log
 import time
 import socket
 
