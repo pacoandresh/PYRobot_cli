@@ -66,5 +66,18 @@ def rawlog_color(mesaje):
         mesaje = mesaje.replace(s, "")
     return mesaje
 
-def P_Log(mesaje):
-    print(log_color(mesaje))
+def P_Log(mesaje,ln=True):
+    if ln:
+        print(log_color(mesaje)) 
+    else:
+        print(log_color(mesaje),end="") 
+    
+def C_Err(condition,mesage):
+    try:
+        assert not condition
+            
+    except AssertionError:
+        P_Log("[FR][ERROR][FY] Critical: [FW]{}".format(mesage))
+        exit()
+    except:
+        P_Log("[FR] Error not evaluable: {}".format(mesage))

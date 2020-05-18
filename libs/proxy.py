@@ -5,7 +5,7 @@
 from mprpc import RPCClient
 import types
 import time
-from PYRobot_cli.libs.botlogging.coloramadefs import P_Log
+from PYRobot.botlogging.coloramadefs import P_Log
 
 
 def_skel_old="""
@@ -45,6 +45,7 @@ class Proxy(object):
             self.__linked=False
             if show:
                 P_Log("[FR]ERROR [FW] No Link to {}".format(uri))
+            
 
     def _close(self):
         if self._link_.is_connected():
@@ -92,6 +93,7 @@ class Proxy(object):
             #print(d)
             hooks.append((defs,d))
         for defs,fun in hooks:
+            #print(defs,fun)
             exec(fun)
             self.__dict__[defs] = types.MethodType(eval(defs), self)
         self.functions=hooks
